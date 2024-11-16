@@ -89,8 +89,8 @@ gap: 20px;
 justify-content: start;
 align-items: center;
 height: ${props => props.$primary ? "auto" : "70px"};
-padding: ${props => props.$primary ? "35px 0px 35px 30px" : "10px"};
-border-top-width: ${props => props.$primary ? "5px" : "0px"};
+padding: ${props => props.$primary ? "10px 0px 12px 30px" : "10px"};
+border-top-width: ${props => props.$primary ? "2px" : "0px"};
 border-top-color: ${props => props.$primary ? "#E0E0E0" : "none"};
 border-style: ${props => props.$primary ? "solid" : "none"};
 

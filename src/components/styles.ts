@@ -1,10 +1,10 @@
 import styled from "styled-components/native";
 
 
-const LayoutContainer = styled.View`
+const LayoutContainer = styled.SafeAreaView`
 flex: 1;
 align-items: center;
-padding-top: 20px;
+padding-top: 30px;
 background: #fff
 `
 
