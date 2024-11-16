@@ -58,7 +58,13 @@ const Home = (): React.JSX.Element => {
 
     useFocusEffect(
         useCallback(() => {
-            return setSelectedOption("today");
+
+            setSelectedOption("today");
+
+
+            return () => {
+                setSelectedOption("today");
+            };
         }, [])
     );
 
