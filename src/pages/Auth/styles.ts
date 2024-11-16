@@ -34,7 +34,7 @@ padding: 12px;
 border-radius: 7px;
 letter-spacing: 4px;
 border: 2px solid;
-border-color: ${({ isFocused }) => (isFocused ? "#189ad3" : "transparent")};
+border-color: ${({ isFocused }) => (isFocused ? "#fff" : "transparent")};
 transition: border 4s ease-in-out;
 `;
 
