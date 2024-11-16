@@ -7,6 +7,7 @@ align-items: center;
 `
 
 const Header = styled.View`
+  margin-top: 10px;
   width: 100%;
   padding: 20px;
   background-color: #71c7ec;

@@ -41,7 +41,7 @@ const HistoricList = ({ data, handleDelete }: dataProps): React.JSX.Element => {
                             <Text>{date}</Text>
                         </Infos>
                         <Infos>
-                            <Text>{title}</Text>
+                            <Text $primary>{title}</Text>
                             <Text style={{ color: color }}
                             >R${value.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")}</Text>
                         </Infos>

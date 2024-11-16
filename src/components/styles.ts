@@ -70,15 +70,17 @@ const TypeText = styled.Text`
 const Infos = styled.View`
 flex-direction: row;
 justify-content: space-between;
+align-items: center
 `
 
-const Text = styled.Text`
+const Text = styled.Text<{ $primary?: boolean }>`
   font-size: 18px;
   color: #333333;
   font-weight: bold;
   margin-top: 4px;
   padding: 8px;
- 
+  flex: 1;
+  text-align: ${props => props.$primary ? "left" : "right"}; 
 `;
 
 
