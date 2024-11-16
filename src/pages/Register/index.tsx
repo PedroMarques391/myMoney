@@ -1,14 +1,16 @@
-import { Alert, Keyboard, TouchableWithoutFeedback } from 'react-native'
+import { Alert, Button, Keyboard, Platform, TouchableWithoutFeedback } from 'react-native'
 import Layout from '../../components/Layout'
 import { Container, Input, PickerView, Submit, SubmitText } from './styles'
 import { useState } from 'react'
-import { Picker } from '@react-native-picker/picker';
 import { useAuth } from '../../hooks/useAuth';
 import { child, get, push, ref, set } from 'firebase/database';
 import { db } from '../../database/firebase.config';
 import dayjs from 'dayjs';
 import { useNavigation } from '@react-navigation/native';
 import Loading from '../../components/Loading';
+import Picker from '../../components/Picker';
+import { ButtonClosePicker, PickerContainerIOS } from '../Home/styles';
+import { X } from 'lucide-react-native';
 
 
 
@@ -17,7 +19,13 @@ const Register = (): React.JSX.Element => {
     const [title, setTitle] = useState<string>("")
     const [type, setType] = useState<"receita" | "despesa">("receita")
     const [loadingRegister, setLoadingRegister] = useState<boolean>(false)
+    const [showPicker, setShowPicker] = useState<boolean>(false)
     const { user } = useAuth()
+
+    const pickerItens = [
+        { key: 1, label: "Despesa", value: "despesa" },
+        { key: 2, label: "Receita", value: "receita" },
+    ]
 
     const navigation: any = useNavigation()
 
@@ -103,19 +111,37 @@ const Register = (): React.JSX.Element => {
                     />
 
                     <PickerView>
-                        <Picker
-                            selectedValue={type}
-                            onValueChange={(itemValue) => setType(itemValue)}
-                        >
-                            <Picker.Item key={0} label="Despesa" value="despesa" />
-                            <Picker.Item key={1} label="Receita" value="receita" />
-                        </Picker>
+                        {Platform.OS === 'android' ? (
+                            <Picker
+                                option={type}
+                                itemObject={pickerItens}
+                                onChange={(type) => setType(type)}
+                            />
+                        ) : <Button title={type} onPress={() => setShowPicker(prevState => !prevState)} />}
                     </PickerView>
                     <Submit onPress={handleRegister}>
                         {loadingRegister ? <Loading isTransparent color='#fff' /> : <SubmitText>Registrar</SubmitText>}
                     </Submit>
+
                 </Container>
             </TouchableWithoutFeedback>
+
+            {
+                showPicker && (
+                    <PickerContainerIOS>
+                        <ButtonClosePicker
+                            onPress={() => setShowPicker(false)}
+                        >
+                            <X size={30} color={"#71c7ec"} />
+                        </ButtonClosePicker>
+                        <Picker
+                            itemObject={pickerItens}
+                            option={type}
+                            onChange={(itemValue) => setType(itemValue)}
+                        />
+                    </PickerContainerIOS>
+                )
+            }
         </Layout>
     )
 }

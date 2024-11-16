@@ -50,6 +50,12 @@ const Home = (): React.JSX.Element => {
         expenses: "Saída",
     }
 
+    const pickerItens = [
+        { key: 1, label: "Hoje", value: "today" },
+        { key: 2, label: "Entrada", value: "revenue" },
+        { key: 3, label: "Saída", value: "expenses" },
+    ]
+
     useFocusEffect(
         useCallback(() => {
             return setSelectedOption("today");
@@ -130,7 +136,7 @@ const Home = (): React.JSX.Element => {
                 <PickerContainer>
                     {Platform.OS === "android" ? (
                         <Picker
-
+                            itemObject={pickerItens}
                             option={selectedOption}
                             onChange={(itemValue) => setSelectedOption(itemValue)}
                         />
@@ -180,6 +186,7 @@ const Home = (): React.JSX.Element => {
                             <X size={30} color={"#71c7ec"} />
                         </ButtonClosePicker>
                         <Picker
+                            itemObject={pickerItens}
                             option={selectedOption}
                             onChange={(itemValue) => setSelectedOption(itemValue)}
                         />

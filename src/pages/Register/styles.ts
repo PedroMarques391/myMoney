@@ -44,6 +44,8 @@ border-radius: 10px;
 padding: 0 16px 0 16px;             
 background-color: #fff;       
 font-size: 16px; 
+height: 56px;
+justify-content: center;
 `
 
 export {
