@@ -44,7 +44,7 @@ const AppRouter = (): React.JSX.Element => {
                 headerShown: false,
                 tabBarShowLabel: false,
                 tabBarStyle: {
-                    backgroundColor: "transparent",
+                    backgroundColor: "#fff",
                     borderTopWidth: 0,
                     elevation: 0,
                     height: 60,
