@@ -39,6 +39,7 @@ const AnimatedIcon = ({
 const AppRouter = (): React.JSX.Element => {
     return (
         <Tab.Navigator
+            initialRouteName='Home'
             screenOptions={{
                 tabBarActiveTintColor: "#71c7ec",
                 headerShown: false,
@@ -70,6 +71,7 @@ const AppRouter = (): React.JSX.Element => {
                 component={Register}
             />
             <Tab.Screen
+                navigationKey='1'
                 options={{
                     tabBarIcon: ({ color, size, focused }) => (
                         <AnimatedIcon
