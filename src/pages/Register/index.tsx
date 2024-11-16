@@ -1,6 +1,6 @@
 import { Alert, Button, Keyboard, Platform, TouchableWithoutFeedback } from 'react-native'
 import Layout from '../../components/Layout'
-import { Container, Input, PickerView, Submit, SubmitText } from './styles'
+import { Container, Header, HeaderContent, HeaderLabel, HeaderText, HeaderValueSection, HeaderValueText, HeaderValueView, Input, PickerView, Submit, SubmitText } from './styles'
 import { useState } from 'react'
 import { useAuth } from '../../hooks/useAuth';
 import { child, get, push, ref, set } from 'firebase/database';
@@ -10,7 +10,9 @@ import { useNavigation } from '@react-navigation/native';
 import Loading from '../../components/Loading';
 import Picker from '../../components/Picker';
 import { ButtonClosePicker, PickerContainerIOS } from '../Home/styles';
-import { X } from 'lucide-react-native';
+import { Wallet, X } from 'lucide-react-native';
+import { formated } from '../../utils/formated';
+import { useHistoric } from '../../hooks/useHistoric';
 
 
 
@@ -21,6 +23,9 @@ const Register = (): React.JSX.Element => {
     const [loadingRegister, setLoadingRegister] = useState<boolean>(false)
     const [showPicker, setShowPicker] = useState<boolean>(false)
     const { user } = useAuth()
+    const { formatedBalance, totalRegisters } = useHistoric()
+
+    const name = user?.name.split(" ")[0]
 
     const pickerItens = [
         { key: 1, label: "Despesa", value: "despesa" },
@@ -91,6 +96,20 @@ const Register = (): React.JSX.Element => {
         <Layout>
             <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
                 <Container>
+
+                    <Header>
+                        <HeaderContent>
+                            <HeaderText>{name}, você já tem {totalRegisters} registro(s). Deseja registrar mais um item?</HeaderText>
+                            <HeaderValueView>
+                                <HeaderLabel>Valor em Carteira</HeaderLabel>
+                                <HeaderValueSection>
+                                    <Wallet size={25} color="#005073" />
+                                    <HeaderValueText>R$ {formatedBalance}</HeaderValueText>
+                                </HeaderValueSection>
+                            </HeaderValueView>
+                        </HeaderContent>
+                    </Header>
+
                     <Input
                         placeholder='Valor desejado'
                         keyboardType='numeric'
