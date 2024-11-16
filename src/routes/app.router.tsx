@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Animated } from 'react-native';
+import { Animated, Platform } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import Home from '../pages/Home';
@@ -48,8 +48,7 @@ const AppRouter = (): React.JSX.Element => {
                     backgroundColor: "#fff",
                     borderTopWidth: 0,
                     elevation: 0,
-                    height: 60,
-                    marginBottom: 10,
+                    height: Platform.OS === "ios" ? 90 : 60,
                     justifyContent: "center",
                     alignItems: "center",
 
