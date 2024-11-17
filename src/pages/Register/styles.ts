@@ -1,10 +1,10 @@
-import styled from "styled-components/native";
+import styled from 'styled-components/native';
 
 const Container = styled.SafeAreaView`
-flex: 1;
-width: 90%;
-align-items: center;
-`
+  flex: 1;
+  width: 90%;
+  align-items: center;
+`;
 
 const Header = styled.View`
   margin-top: 10px;
@@ -19,7 +19,7 @@ const HeaderContent = styled.View`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  gap: 15px; 
+  gap: 15px;
 `;
 
 const HeaderText = styled.Text`
@@ -37,7 +37,6 @@ const HeaderValueView = styled.View`
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
-
 `;
 
 const HeaderLabel = styled.Text`
@@ -58,49 +57,47 @@ const HeaderValueText = styled.Text`
   color: #005073;
 `;
 
-
 const Input = styled.TextInput.attrs({
-  placeholderTextColor: "black"
+  placeholderTextColor: 'black',
 })`
-width: 90%;
-height: 50px;                 
-border: 1px solid #ccc;           
-border-radius: 10px;   
-padding: 0 16px 0 16px;             
-background-color: #fff;       
-font-size: 16px;              
-color: #333;                  
-margin-bottom: 12px;            
+  width: 90%;
+  height: 50px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 0 16px 0 16px;
+  background-color: #fff;
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 12px;
 `;
 
 const Submit = styled.TouchableOpacity`
-margin-top: 20px;
-width: 80%;
-height: 50px;               
-border: 1px solid #71c7ec;    
-border-radius: 12px;          
-justify-content: center;    
-align-items: center;          ;              
+  margin-top: 20px;
+  width: 80%;
+  height: 50px;
+  border: 1px solid #71c7ec;
+  border-radius: 12px;
+  justify-content: center;
+  align-items: center;
 `;
 
-
 const SubmitText = styled.Text`
-color: #71c7ec;                
-font-size: 18px;            
-font-weight: bold;           
-text-align: center;          
+  color: #71c7ec;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
 `;
 
 const PickerView = styled.View`
-width: 90%;                
-border: 1px solid #ccc;           
-border-radius: 10px;   
-padding: 0 16px 0 16px;             
-background-color: #fff;       
-font-size: 16px; 
-height: 56px;
-justify-content: center;
-`
+  width: 90%;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 0 16px 0 16px;
+  background-color: #fff;
+  font-size: 16px;
+  height: 56px;
+  justify-content: center;
+`;
 
 export {
   Container,
@@ -114,5 +111,5 @@ export {
   SubmitText,
   HeaderValueSection,
   HeaderLabel,
-  HeaderContent
-}
+  HeaderContent,
+};
