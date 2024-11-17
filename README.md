@@ -10,11 +10,10 @@ O aplicativo possui quatro telas principais:
 - Inclui as telas de **Login** e **Cadastro**.  
 - A navegação entre elas é suave e visualmente agradável, utilizando estados para transições dinâmicas.  
 
-**Imagem 1: Tela de Login**  
-![Tela de Login](./assets/images/login.PNG)  
+| Tela de Login                              | Tela de Cadastro                          |
+|--------------------------------------------|-------------------------------------------|
+| <img src="./assets/images/login.PNG" alt="Tela de Login" width="300"> | <img src="./assets/images/signup.PNG" alt="Tela de Cadastro" width="300"> |
 
-**Imagem 2: Tela de Cadastro**  
-![Tela de Cadastro](./assets/images/signup.png)  
 
 ### **2. Tela Home**  
 - Tela principal do aplicativo.  
@@ -31,9 +30,9 @@ O aplicativo possui quatro telas principais:
 
 #### **Exemplo de Tela Home:**  
 
-| Sem Itens Cadastrados                       | Com Itens Cadastrados                   |
-|--------------------------------------------|-----------------------------------------|
-|![Tela Home sem Itens](./assets/images/homeScreen2.PNG) | ![Tela Home com Itens](./assets/images/homeScreen.PNG) | 
+| Sem Itens Cadastrados                              | Com Itens Cadastrados                           |
+|----------------------------------------------------|------------------------------------------------|
+| <img src="./assets/images/homeScreen2.PNG" alt="Tela Home sem Itens" width="300"> | <img src="./assets/images/homeScreen.PNG" alt="Tela Home com Itens" width="300"> |
 
 --- 
 
@@ -46,10 +45,10 @@ O aplicativo possui quatro telas principais:
   - Um picker reutilizado da tela Home (evitando repetição de código).  
 - Ao registrar um item:  
   - Ele é salvo no **Firebase Realtime Database**.  
-  - Atualiza automaticamente a lista de itens na tela Home, graças ao método **onValue**.  
-
+  - Atualiza automaticamente a lista de itens na tela Home, graças ao método **onValue**.
+    
 **Imagem 4: Tela de Registro de Itens**  
-![Tela de Registro de Itens](./assets/images/registerScreen.PNG)  
+<img src="./assets/images/registerScreen.PNG" alt="Tela de Registro de Itens" width="300">
 
 ### **4. Tela de Perfil**  
 - Exibe as informações do usuário:  
@@ -64,11 +63,10 @@ O aplicativo possui quatro telas principais:
   - **Registrar gastos**: Redireciona para a tela Register.  
   - **Sair**: Desloga o usuário.  
 
-**Imagem 5: Tela de Perfil**  
-![Tela de Perfil](./assets/images/profileScreen.PNG)  
+| Tela de Perfil                                    | Editando o Perfil                              |
+|--------------------------------------------------|-----------------------------------------------|
+| <img src="./assets/images/profileScreen.PNG" alt="Tela de Perfil" width="300"> | <img src="./assets/images/profileModal.PNG" alt="Editando o Perfil" width="300"> |
 
-**Imagem 6: Editando o Perfil**  
-![Editando o Perfil](./assets/images/profileModal.PNG)  
 
 ---
 
