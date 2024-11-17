@@ -1,6 +1,6 @@
-import {Alert, Modal, Platform} from 'react-native';
+import { Alert, Modal, Platform } from 'react-native';
 import Layout from '../../components/Layout';
-import {useAuth} from '../../hooks/useAuth';
+import { useAuth } from '../../hooks/useAuth';
 import {
   Container,
   InfoView,
@@ -23,7 +23,7 @@ import {
   HistoricInfoSubtitle,
   ButtonContainer,
 } from './styles';
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import InputWithClearButton from '../../components/InputWithClearButton';
 import {
   DollarSign,
@@ -33,13 +33,13 @@ import {
   User,
   XSquare,
 } from 'lucide-react-native';
-import {useNavigation} from '@react-navigation/native';
-import {useHistoric} from '../../hooks/useHistoric';
-import {formated} from '../../utils/formated';
+import { useNavigation } from '@react-navigation/native';
+import { useHistoric } from '../../hooks/useHistoric';
+import { formated } from '../../utils/formated';
 
 const Profile = (): React.JSX.Element => {
-  const {logout, user, updateProfile} = useAuth();
-  const {balance, totalExpenses, totalRevenue, totalRegisters} = useHistoric();
+  const { logout, user, updateProfile } = useAuth();
+  const { balance, totalExpenses, totalRevenue, totalRegisters } = useHistoric();
   const [showModal, setShowModal] = useState<boolean>(false);
 
   const [url, setUrl] = useState<string>(user?.url || '');
@@ -89,7 +89,7 @@ const Profile = (): React.JSX.Element => {
 
   const handleFinish = async () => {
     if (!name || !work || !phone) {
-      Alert.alert('Ops!!', 'Todos os campos devem ser preencidos');
+      Alert.alert('Ops!!', 'Telefone, Nome e Profissão devem ser preencidos!');
       return;
     }
     if (phone.length < 11) {
@@ -113,20 +113,20 @@ const Profile = (): React.JSX.Element => {
         <InfoView>
           <MainInfos>
             <Image
-              style={{borderRadius: 50}}
+              style={{ borderRadius: 50 }}
               source={
                 user?.url
-                  ? {uri: user?.url}
+                  ? { uri: user?.url }
                   : require('../../../assets/iconDefault.png')
               }
             />
             <InfoSection>
               <Title>{user?.name}</Title>
-              <TextProfile $primary>{user?.work}</TextProfile>
+              <TextProfile $primary>{user?.work ? user?.work : "Profissão não informada"}</TextProfile>
             </InfoSection>
           </MainInfos>
           <Contacts>
-            <TextProfile>{formatedPhone}</TextProfile>
+            <TextProfile>{formatedPhone ? formatedPhone : "Telefone não informado"}</TextProfile>
             <TextProfile>{user?.email}</TextProfile>
           </Contacts>
         </InfoView>
@@ -174,9 +174,9 @@ const Profile = (): React.JSX.Element => {
                 <XSquare size={30} color={'red'} />
               </Button>
               <Image
-                style={{borderRadius: 50}}
+                style={{ borderRadius: 50 }}
                 source={
-                  url ? {uri: url} : require('../../../assets/iconDefault.png')
+                  url ? { uri: url } : require('../../../assets/iconDefault.png')
                 }
               />
 

@@ -20,18 +20,18 @@ import {
   Submit,
   SubmitText,
 } from './styles';
-import {useState} from 'react';
-import {useAuth} from '../../hooks/useAuth';
-import {child, get, push, ref, set} from 'firebase/database';
-import {db} from '../../database/firebase.config';
+import { useState } from 'react';
+import { useAuth } from '../../hooks/useAuth';
+import { child, get, push, ref, set } from 'firebase/database';
+import { db } from '../../database/firebase.config';
 import dayjs from 'dayjs';
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import Loading from '../../components/Loading';
 import Picker from '../../components/Picker';
-import {ButtonClosePicker, PickerContainerIOS} from '../Home/styles';
-import {Wallet, X} from 'lucide-react-native';
-import {formated} from '../../utils/formated';
-import {useHistoric} from '../../hooks/useHistoric';
+import { ButtonClosePicker, PickerContainerIOS } from '../Home/styles';
+import { Wallet, X } from 'lucide-react-native';
+import { formated } from '../../utils/formated';
+import { useHistoric } from '../../hooks/useHistoric';
 
 const Register = (): React.JSX.Element => {
   const [value, setValue] = useState<string>('');
@@ -39,14 +39,14 @@ const Register = (): React.JSX.Element => {
   const [type, setType] = useState<'receita' | 'despesa'>('receita');
   const [loadingRegister, setLoadingRegister] = useState<boolean>(false);
   const [showPicker, setShowPicker] = useState<boolean>(false);
-  const {user} = useAuth();
-  const {formatedBalance, totalRegisters} = useHistoric();
+  const { user } = useAuth();
+  const { formatedBalance, totalRegisters } = useHistoric();
 
   const name = user?.name.split(' ')[0];
 
   const pickerItens = [
-    {key: 1, label: 'Despesa', value: 'despesa'},
-    {key: 2, label: 'Receita', value: 'receita'},
+    { key: 1, label: 'Despesa', value: 'despesa' },
+    { key: 2, label: 'Receita', value: 'receita' },
   ];
 
   const navigation: any = useNavigation();
@@ -76,7 +76,7 @@ const Register = (): React.JSX.Element => {
           style: 'default',
         },
       ],
-      {cancelable: false},
+      { cancelable: false },
     );
   }
 
@@ -166,7 +166,7 @@ const Register = (): React.JSX.Element => {
           </PickerView>
           <Submit onPress={handleRegister}>
             {loadingRegister ? (
-              <Loading isTransparent color="#fff" />
+              <Loading isTransparent color="#71c7ec" />
             ) : (
               <SubmitText>Registrar</SubmitText>
             )}
