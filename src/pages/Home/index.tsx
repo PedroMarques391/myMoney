@@ -1,6 +1,6 @@
 import { Button, FlatList, StyleSheet, Platform, Alert } from 'react-native';
 import { useAuth } from '../../hooks/useAuth';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Layout from '../../components/Layout';
 import {
     BalanceText, Container,
@@ -43,6 +43,7 @@ const Home = (): React.JSX.Element => {
     const { uid, name, url, email } = user || {};
     const navigate: any = useNavigation()
     const [showPicker, setShowPicker] = useState<boolean>(false)
+    const [loadingImage, setLoadingImage] = useState<boolean>(false)
 
     const IOSPickerLabel = {
         today: "Hoje",
@@ -67,6 +68,13 @@ const Home = (): React.JSX.Element => {
             };
         }, [])
     );
+
+    useEffect(() => {
+        if (url) {
+            Image.prefetch(url).then(() => setLoadingImage(false)).catch(() => setLoadingImage(false));
+        }
+    }, [url]);
+
 
 
     const handleDelete = (data: IHistoricalItemInterface) => {
@@ -127,7 +135,7 @@ const Home = (): React.JSX.Element => {
                 </SectionInfo>
 
                 <ImageContainer onPress={goToProfile}>
-                    {loading ? <Loading isTransparent /> : <Image
+                    {loadingImage && loading ? <Loading isTransparent /> : <Image
                         style={{ borderRadius: 50 }}
                         source={url ? { uri: url } : require("../../../assets/iconDefault.png")} />}
                 </ImageContainer>

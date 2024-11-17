@@ -16,7 +16,7 @@ function App(): React.JSX.Element {
     <NavigationContainer>
       <AuthProvider>
         <HistoricProvider>
-          <StatusBar barStyle={'light-content'}
+          <StatusBar barStyle={'dark-content'}
             backgroundColor={'#131313'} />
           <Routes />
         </HistoricProvider>
