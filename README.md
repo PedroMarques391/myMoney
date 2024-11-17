@@ -11,7 +11,7 @@ O aplicativo possui quatro telas principais:
 - A navegação entre elas é suave e visualmente agradável, utilizando estados para transições dinâmicas.  
 
 **Imagem 1: Tela de Login**  
-![Tela de Login](./assets/images/login.png)  
+![Tela de Login](./assets/images/login.PNG)  
 
 **Imagem 2: Tela de Cadastro**  
 ![Tela de Cadastro](./assets/images/signup.png)  
@@ -33,7 +33,7 @@ O aplicativo possui quatro telas principais:
 
 | Sem Itens Cadastrados                       | Com Itens Cadastrados                   |
 |--------------------------------------------|-----------------------------------------|
-|![Tela Home sem Itens](./assets/images/homeScreen2.png) | ![Tela Home com Itens](./assets/images/homeScreen.png) | 
+|![Tela Home sem Itens](./assets/images/homeScreen2.PNG) | ![Tela Home com Itens](./assets/images/homeScreen.PNG) | 
 
 --- 
 
@@ -49,7 +49,7 @@ O aplicativo possui quatro telas principais:
   - Atualiza automaticamente a lista de itens na tela Home, graças ao método **onValue**.  
 
 **Imagem 4: Tela de Registro de Itens**  
-![Tela de Registro de Itens](./assets/images/registerScreen.png)  
+![Tela de Registro de Itens](./assets/images/registerScreen.PNG)  
 
 ### **4. Tela de Perfil**  
 - Exibe as informações do usuário:  
@@ -65,10 +65,10 @@ O aplicativo possui quatro telas principais:
   - **Sair**: Desloga o usuário.  
 
 **Imagem 5: Tela de Perfil**  
-![Tela de Perfil](./assets/images/profileScreen.png)  
+![Tela de Perfil](./assets/images/profileScreen.PNG)  
 
 **Imagem 6: Editando o Perfil**  
-![Editando o Perfil](./assets/images/profileModal.png)  
+![Editando o Perfil](./assets/images/profileModal.PNG)  
 
 ---
 
