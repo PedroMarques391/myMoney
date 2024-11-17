@@ -2,10 +2,10 @@ import styled from "styled-components/native";
 
 
 const LayoutContainer = styled.SafeAreaView`
-flex: 1;
-align-items: center;
-padding-top: 30px;
-background: #fff
+  flex: 1;
+  align-items: center;
+  padding-top: 30px;
+  background: #fff
 `
 
 const InputView = styled.View`
@@ -21,10 +21,10 @@ const ClearButton = styled.TouchableOpacity`
 const InputEdit = styled.TextInput.attrs({
   placeholderTextColor: 'gray',
 })`
-flex: 1; 
-border-bottom-width: 1px; 
-border-bottom-color: #ccc; 
-padding: 10px;
+  flex: 1; 
+  border-bottom-width: 1px; 
+  border-bottom-color: #ccc; 
+  padding: 10px;
 
 `
 
@@ -51,7 +51,7 @@ const Type = styled.TouchableOpacity`
 `;
 
 const IconView = styled.View<{ $primary?: boolean }>`
-flex-direction: row;
+  flex-direction: row;
   background-color: ${props => props.$primary ? "#4caf50" : "red"} ; 
   border-radius: 15px;
   justify-content: center;
@@ -84,6 +84,42 @@ const Text = styled.Text<{ $primary?: boolean }>`
 `;
 
 
+//WelcomeScreenStyles
+
+const WelcomeText = styled.Text`
+  font-size: 30px;
+  color: #71c7ec;
+  font-weight: bold;
+  margin-bottom: 20px;
+`;
+
+const GreetingText = styled.Text`
+  font-size: 20px;
+  color: #71c7ec;
+  text-align: center;
+  margin-bottom: 30px;
+`;
+
+const ButtonContainer = styled.TouchableOpacity`
+  flex-direction: row;
+  border: 1px solid #71c7ec;
+  width: 70%;
+  height: 60px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 0px 30px 0 30px ;
+`;
+
+const ButtonText = styled.Text`
+  color: #71c7ec;
+  font-size: 18px;
+  font-weight: bold;
+  flex: 1;
+  text-align: center
+`;
+
 
 
 export {
@@ -96,5 +132,9 @@ export {
   Type,
   TypeText,
   Text,
-  Infos
+  Infos,
+  WelcomeText,
+  GreetingText,
+  ButtonContainer,
+  ButtonText
 }
